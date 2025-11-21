@@ -9,9 +9,8 @@ class TTS_voices:
 
 class TTS():
     def __init__(self):
-        self.engine = pyttsx3.init()
-        self.engine.setProperty('rate', 200)
-        self.engine.setProperty('volume', 0.9)
+        self._voice_id = None
+        self._start_engine()
 
     def listVoices(self):
         available_voices: list[TTS_voices] = []
@@ -21,9 +20,19 @@ class TTS():
         return available_voices
 
     def setVoice(self, voice: TTS_voices):
-        self.engine.setProperty('voice', voice.id)
+        self._voice_id = voice.id
+
+    def _start_engine(self, rate = 200):
+        self.engine = pyttsx3.init()
+        self.engine.setProperty('rate', rate)
+        self.engine.setProperty('volume', 0.9)
+        if self._voice_id:
+            self.engine.setProperty('voice', self._voice_id)
 
 
-    def speak(self, text: str):
+    def speak(self, text: str, rate = 200):
+        self._start_engine(rate)
+        print("Computer : ",text)
         self.engine.say(text)
         self.engine.runAndWait()
+        del self.engine
