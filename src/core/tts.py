@@ -1,6 +1,5 @@
 import pyttsx3
 from dataclasses import dataclass
-from collections.abc import MutableSequence
 
 @dataclass
 class TTS_voices:
@@ -32,7 +31,7 @@ class TTS():
 
     def speak(self, text: str, rate = 200):
         self._start_engine(rate)
-        print("Computer : ",text)
+        # print("Computer : ",text)
         self.engine.say(text)
         self.engine.runAndWait()
         del self.engine
