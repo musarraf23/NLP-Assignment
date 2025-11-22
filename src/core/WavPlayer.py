@@ -1,10 +1,11 @@
 import pyaudio
 import wave 
 
+
 class WavPlayer():
     def __init__(self):
         self.chunk = 1024
-
+    
     def play(self, file_name: str):
         p = pyaudio.PyAudio()
         wf = wave.open(f'assets/sfx/{file_name}.wav', 'rb')
@@ -21,5 +22,5 @@ class WavPlayer():
 
         # cleanup stuff.
         wf.close()
-        stream.close()    
+        stream.close()
         p.terminate()

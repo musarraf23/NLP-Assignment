@@ -1,37 +1,27 @@
-import pyttsx3
-from dataclasses import dataclass
-
-@dataclass
-class TTS_voices:
-    id: str
-    name: str
+from piper import PiperVoice, SynthesisConfig
+import pyaudio
 
 class TTS():
     def __init__(self):
-        self._voice_id = None
-        self._start_engine()
-
+        self.voice = PiperVoice.load("assets/voices/en_GB-semaine-medium.onnx")
+    
     def listVoices(self):
-        available_voices: list[TTS_voices] = []
-        voices = self.engine.getProperty('voices')
-        for voice in voices:
-            available_voices.append(TTS_voices(id=voice.id, name=voice.name))
-        return available_voices
+        return ['']
 
-    def setVoice(self, voice: TTS_voices):
-        self._voice_id = voice.id
-
-    def _start_engine(self, rate = 200):
-        self.engine = pyttsx3.init()
-        self.engine.setProperty('rate', rate)
-        self.engine.setProperty('volume', 0.9)
-        if self._voice_id:
-            self.engine.setProperty('voice', self._voice_id)
-
+    def setVoice(self, voice):
+        pass
 
     def speak(self, text: str, rate = 200):
-        self._start_engine(rate)
-        # print("Computer : ",text)
-        self.engine.say(text)
-        self.engine.runAndWait()
-        del self.engine
+        syn_config = SynthesisConfig(
+            length_scale = 200 / rate,
+        )
+        p = pyaudio.PyAudio()
+        synth = self.voice.synthesize(text, syn_config)
+        for syn in synth:
+            stream = p.open(format =
+                            p.get_format_from_width(syn.sample_width),
+                            channels = syn.sample_channels,
+                            rate = syn.sample_rate,
+                            output = True)
+            stream.write(syn.audio_int16_bytes)
+        p.terminate()

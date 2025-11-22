@@ -11,7 +11,7 @@ class Game:
         self.tts = TTS()
         voices = self.tts.listVoices()
         # TODO : remove hardcoded voice (2: Microsoft Zira Desktop) -- platform dependent
-        self.tts.setVoice(voices[2])
+        self.tts.setVoice(voices[0])
         self.wakeup_word = wakeup_word.lower()
         self.questions = config.questions
         self.question_idx = 0
@@ -72,16 +72,16 @@ class Game:
         self.is_running = False
 
     def run(self):
-        self.__wait_for_wakeup()
-        self.__prompt()
-        time.sleep(0.5)
+        # self.__wait_for_wakeup()
+        # self.__prompt()
+        # time.sleep(0.5)
         
-        self.tts.speak('Ok Lets play game.')
-        time.sleep(1.0)
+        # self.tts.speak('Ok Lets play game.')
+        # time.sleep(1.0)
 
-        # Intro
-        self.__intro()
-        time.sleep(1.0)
+        # # Intro
+        # self.__intro()
+        # time.sleep(1.0)
         self.wav_player.play('open')
 
         # Game Loop
