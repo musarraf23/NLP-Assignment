@@ -75,10 +75,11 @@ class Dialogues:
 
 
 questions : list[Question] = [
-    Question(question="How many times can you subtract the number 5 from 35?", answers=["seven", "7"]),
-    Question(question="Jack is looking at Anne. Anne is looking at George. Jack is married, George is not, and we don't know if Anne is married. Is a married person looking at an unmarried person?", answers=["yes", "yep", "yo", "yeah"]),
-    Question(question="The day before two days after the day before tomorrow is Saturday. What day is it today?", answers=["friday"]),
-    Question(question="Susan and Lisa decided to play tennis against each other. They bet $1 on each game they played. Susan won three bets and Lisa won $5. How many games did they play?", answers=["eleven"]),
+    Question(question="What comes once in a minute, twice in a moment, but never in a thousand", answers=["The letter M", "M"]),
+    Question(question=" I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?", answers=["A map", "Map"]),
+    Question(question="I have branches, but no fruit, trunk, or leaves. What am I?", answers=["Bank","you are a bank"]),
+    Question(question="I have a neck but no head. I have two arms but no hands. What am I?", answers=["Shirt","A shirt"]),
+
 ]
 
 dialogues = Dialogues()
