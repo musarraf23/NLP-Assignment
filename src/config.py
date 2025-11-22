@@ -75,11 +75,10 @@ class Dialogues:
 
 
 questions : list[Question] = [
-    Question(question="What comes once in a minute, twice in a moment, but never in a thousand", answers=["The letter M", "M"]),
-    Question(question=" I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?", answers=["A map", "Map"]),
-    Question(question="I have branches, but no fruit, trunk, or leaves. What am I?", answers=["Bank","you are a bank"]),
-    Question(question="I have a neck but no head. I have two arms but no hands. What am I?", answers=["Shirt","A shirt"]),
-
+    Question(question="What comes once in a minute, twice in a moment, but never in a thousand", answers=["m"]),
+    Question(question=" I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I?", answers=["map"]),
+    Question(question="I have branches, but no fruit, trunk, or leaves. What am I?", answers=["bank"]),
+    Question(question="I have a neck but no head. I have two arms but no hands. What am I?", answers=["shirt"]),
 ]
 
 dialogues = Dialogues()
