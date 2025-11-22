@@ -72,16 +72,16 @@ class Game:
         self.is_running = False
 
     def run(self):
-        # self.__wait_for_wakeup()
-        # self.__prompt()
-        # time.sleep(0.5)
+        self.__wait_for_wakeup()
+        self.__prompt()
+        time.sleep(0.5)
         
-        # self.tts.speak('Ok Lets play game.')
-        # time.sleep(1.0)
+        self.tts.speak('Ok Lets play game.')
+        time.sleep(1.0)
 
-        # # Intro
-        # self.__intro()
-        # time.sleep(1.0)
+        # Intro
+        self.__intro()
+        time.sleep(1.0)
         self.wav_player.play('open')
 
         # Game Loop
