@@ -1,3 +1,3 @@
-from app import App
-app = App()
-app.run()
+from Game import Game
+game = Game()
+game.run()

@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from Game import Question
 
 @dataclass
 class Prompts:
@@ -15,12 +14,6 @@ class Prompts:
         "Hello! I'm here and ready to dive in.",
         "Hey! How can I make things easier for you today?"
     ]
-
-
-questions : list[Question] = [
-    Question(question="What has to be broken before you can use it?", answer="egg"), 
-    Question(question="I'm tall when I'm young, and I'm short when I'm old. What am I?", answer="candle"), 
-]
     
 
 
