@@ -14,7 +14,13 @@ You've been captured by aliens who believe you're the brightest mind on Earth. Y
 - **Interactive Gameplay**: Real-time voice interaction with the game
 - **Multiple Riddles**: Challenge yourself with various brain teasers
 
-## 📋 sssquirements
+## 🧭 Game Flow Preview
+
+The high-level flow of the game and code execution is shown below:
+
+![Game Flow Diagram](assets/images/flowchart.png)
+
+## 📋 Requirements
 
 - Python 3.10 or higher
 - Microphone (for voice input)
