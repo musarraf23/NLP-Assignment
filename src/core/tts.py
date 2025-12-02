@@ -3,7 +3,7 @@ import pyaudio
 
 class TTS():
     def __init__(self):
-        self.voice = PiperVoice.load("assets/voices/en_GB-semaine-medium.onnx")
+        self.voice = PiperVoice.load("assets/voices/en_US-amy-medium.onnx")
     
     def listVoices(self):
         return ['']
